@@ -122,7 +122,9 @@ h4 {
 }
 
 .style2_format {
-  font-size: 15px;
+  background-color: var(--color-2);
+  color: var(--fontCol);
+  font-size: 0.8rem;
   text-align: center;
   line-height: 45px;
 }
@@ -195,7 +197,10 @@ h4 {
 }
 
 .oferta_info {
+  font-size: 0.9rem;
   padding: 1rem;
+  display: flex;
+  background-color: var(--color-background);
 }
 
 .hidden{
@@ -203,12 +208,12 @@ h4 {
 }
 
 .cennik {
-  display: grid;
-  /* justify-items: stretch; */
+  /* display: grid;
+  justify-items: stretch;
   grid-template-columns: 5fr 1fr 1fr;
-  grid-template-rows: repeat(5, 45px);
+  grid-template-rows: repeat(5, 45px); */
   background-color: var(--color-background);
-  margin: 1rem;
+  margin: 0.8rem;
 }
 
 .kontakt {
