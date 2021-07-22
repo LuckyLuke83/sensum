@@ -1,0 +1,270 @@
+/*Kolory dopełniające */
+
+:root {
+  --color-1: #88CBD3;
+  --color-2: #2b6e75;
+  --color-3: #875C3B;
+  --color-4: #c2c2c2;
+  --color-background: #fcfcfc;
+  --fontCol: #BDF8FF;
+  --fontColHover: #fff;
+  --gradient: linear-gradient(to right, var(--color-background), var(--color-1));
+  --text-padding: 1rem;
+
+}
+
+/* --main-1: #875C3B;
+  --main-2: #2b6e75;
+  --main-5: #88CBD3;
+  --background: #F2F2F2;
+  --main-4: #c2c2c2;
+  --fontCol: #BDF8FF;
+  --fontColHover: #fff;
+  --padding: 15px;
+  --mainWidth: 1140px; */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /* Set font size for easy rem calculations    box-sizing: border-box;  scroll-behavior: smooth;
+   * default document font size = 16px, 1rem = 16px, 100% = 16px
+   * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+  */
+  
+  box-sizing: border-box;
+}
+
+/* Base reset */
+body {
+  padding: 0 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px; /* 18px */
+  font-weight: 400;
+  line-height: 1.4;
+  background-color: var(--color-background);
+}
+
+
+
+h1 {
+  font-size: 80px;
+  padding-left: 1rem;
+}
+
+h3 {
+  font-size: 40px;
+  padding-left: 1rem;
+}
+
+h4 {
+  font-size: 20px;
+  padding-left: 1rem;
+}
+
+.section {
+  padding: 1rem 0;
+  background-color: var(--color-1);
+  
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 4rem;
+  width: 100%;
+  /* padding: 0 6rem; */
+  z-index: 100;
+  transition: transform 1s, opacity 1s;
+}
+
+.nav__links {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+/* .nav__item{
+  
+  border: solid red 1px;
+} */
+
+.nav__link--btn:link,
+.nav__link--btn:visited {
+  height: 3rem;
+  text-decoration: none;
+  line-height: 3rem;
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  padding: 0 1.5rem;
+  border-radius: 1rem;
+  background-color: var(--color-2);
+  color: var(--fontCol);
+  display: block;
+  transition: all 0.3s;
+}
+
+.nav__link--btn:hover {
+  color: var(--fontColHover);
+  background-color: var(--color-3);
+}
+
+.style1_format {
+  background-color: var(--color-2);
+  color: var(--fontCol);
+  text-align: center;
+  line-height: 45px;
+}
+
+.style2_format {
+  font-size: 15px;
+  text-align: center;
+  line-height: 45px;
+}
+
+.h_formating {
+  color: var(--color-2);
+  background-image: var(--gradient);
+}
+
+.shadow {
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.gradient_full {
+  /* width: 100%; */
+  background-image: linear-gradient(to right, var(--background), var(--main-5));
+}
+
+.logo {
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  height: 200px;
+  display: block;
+  background-color: var(--color-background);
+  border-radius: 50%;
+  border: solid var(--color-2) 5px;
+}
+
+.info {
+  margin: 3rem 1rem;
+  background-color: var(--color-background); 
+  border-radius: 5px;
+  padding: var(--text-padding);
+  text-align: justify;
+  
+}
+
+.rounded_photo {
+  border-radius: 50%;
+  width: 250px;
+  margin: 2rem auto;
+  display: block;
+  border: solid var(--color-2) 5px;
+ }
+
+.btn_oferta {
+  width: 100%;
+  height: 3rem;
+  text-decoration: none;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  
+  outline: none; /*no border after selecting*/
+  letter-spacing: 1px;
+  display: block;
+  transition: all 0.3s;
+  border: none;
+}
+
+.btn_oferta:hover {
+  background-color: var(--color-3);
+  color: var(--fontColHover);
+}
+
+.btn_oferta_active {
+  background-color: var(--color-3);
+  color: var(--fontColHover);
+}
+
+.oferta_info {
+  padding: 1rem;
+}
+
+.hidden{
+ display: none;
+}
+
+.cennik {
+  display: grid;
+  /* justify-items: stretch; */
+  grid-template-columns: 5fr 1fr 1fr;
+  grid-template-rows: repeat(5, 45px);
+  background-color: var(--color-background);
+  margin: 1rem;
+}
+
+.kontakt {
+  padding: 2rem;
+  line-height: 2;
+}
+
+/* .main_container {
+  width: 100%;
+  background-color: var(--main-5);
+}
+
+.wrapper {
+  padding: 70px 0;
+  width: 100%;
+}  
+
+.socialM {
+  display: flex;
+  justify-content: center;
+}
+
+.socialM .fa {
+  font-size: 30px;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  text-decoration: none;
+  margin: 7px;
+  line-height: 2;
+  border-radius: 50%;
+  background: var(--main-2);
+  color: var(--fontCol);
+}
+
+.socialM .fa:hover {
+  color: var(--fontColHover);
+  background-color: var(--main-1);
+}
+
+.o_nas_1 {
+  margin: 20px auto;
+}
+
+.o_nas_1 img { 
+  width: 200px;
+  height: 200px;
+  display: block;
+  margin: auto;
+  background-color: var(--background);
+  border-radius: 50%;
+  border: solid var(--main-2) 5px;
+}
+
+
+
+
+
+
