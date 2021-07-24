@@ -105,7 +105,7 @@
     <section class="section" id="oferta">
       <h3 class="h_formating">Oferta</h3>
       <div class="info shadow oferta_container">
-        <button class="btn_oferta style1_format" data-tab="1">
+        <button class="btn_oferta style1_format btn_active" data-tab="1">
           Konsultacje z psychologiem
         </button>
         <div class="oferta_info oferta-1">
@@ -205,31 +205,35 @@
     </section>
     <section class="section" id="cennik">
       <h3 class="h_formating">Cennik</h3>
-      <div class="shadow cennik">
-        <button class="btn_oferta style2_format">
+      <div class="info shadow cennik oferta-1">
+        <button class="cennik_oferta style1_format btn_active" data-tab="1">
           konsultacja psychologiczna dorosłych
         </button>
-        <div class="">50 minut - 100zł</div>
-        <button class="btn_oferta style2_format">
+        <div class="cena_uslugi oferta-1">100zł (50 minut)</div>
+        <button class="cennik_oferta style1_format" data-tab="2">
           psychoterapia indywidualna dorosłych
         </button>
-        <div class="hidden">50 minut - 100zł</div>
-        <button class="btn_oferta style2_format">psychoterapia par</button>
-        <div class="hidden">50 minut - 100zł</div>
-        <button class="btn_oferta style2_format">terapia online</button>
-        <div class="hidden">50 minut - 100zł</div>
-        <button class="btn_oferta style2_format">
+        <div class="cena_uslugi hidden oferta-2">100zł (50 minut)</div>
+        <button class="cennik_oferta style1_format" data-tab="3">
+          psychoterapia par
+        </button>
+        <div class="cena_uslugi hidden oferta-3">100zł (50 minut)</div>
+        <button class="cennik_oferta style1_format" data-tab="4">
+          terapia online
+        </button>
+        <div class="cena_uslugi hidden oferta-4">100zł (50 minut)</div>
+        <button class="cennik_oferta style1_format" data-tab="5">
           diagnoza osobowości (z opinią)
         </button>
-        <div class="hidden">50 minut - 100zł</div>
-        <button class="btn_oferta style2_format">
+        <div class="cena_uslugi hidden oferta-5">100zł (50 minut)</div>
+        <button class="cennik_oferta style1_format" data-tab="6">
           diag. neuropsychologiczna (z opinią)
         </button>
-        <div class="hidden">50 minut - 100zł</div>
-        <button class="btn_oferta style2_format">
+        <div class="cena_uslugi hidden oferta-6">100zł (50 minut)</div>
+        <button class="cennik_oferta style1_format" data-tab="7">
           kons. psychologiczna dzieci i młodzieży
         </button>
-        <div class="hidden">50 minut - 100zł</div>
+        <div class="cena_uslugi hidden oferta-7">100zł (50 minut)</div>
       </div>
     </section>
 
@@ -259,33 +263,46 @@
     </section>
     <script>
       const ofertaContainer = document.querySelector('.oferta_container');
+      const cennik = document.querySelector('.cennik');
       const oferta_btn = document.querySelectorAll('.btn_oferta');
+      const cennik_btn = document.querySelectorAll('.cennik_oferta');
       const oferta_info = document.querySelectorAll('.oferta_info');
-      console.log(oferta_btn);
+      const cena_uslugi = document.querySelectorAll('.cena_uslugi');
+
+      console.log(cena_uslugi);
 
       ofertaContainer.addEventListener('click', function (e) {
         e.preventDefault();
-        const clicked = e.target.closest('.btn_oferta');
+        const clicked = e.target.closest('.style1_format');
         console.log(clicked);
 
         //Guard clause
         if (!clicked) return;
+        //
+        oferta_btn.forEach(el => el.classList.remove('btn_active'));
+
         //Activate content area
         oferta_info.forEach(el => el.classList.add('hidden'));
         document
           .querySelector(`.oferta-${clicked.dataset.tab}`)
           .classList.remove('hidden');
+      });
 
-        // //Activetab
-        // tabs.forEach(el => el.classList.remove('operations__tab--active'));
-        // e.target.classList.add('operations__tab--active');
-        // //Activate content area
-        // tabsContent.forEach(el =>
-        //   el.classList.remove('operations__content--active')
-        // );
-        // document
-        //   .querySelector(`.operations__content--${clicked.dataset.tab}`)
-        //   .classList.add('operations__content--active');
+      cennik.addEventListener('click', function (e) {
+        e.preventDefault();
+        const clicked = e.target.closest('.style1_format');
+        console.log(clicked);
+
+        //Guard clause
+        if (!clicked) return;
+
+        cennik_btn.forEach(el => el.classList.remove('btn_active'));
+        //Activate content area
+        cena_uslugi.forEach(el => el.classList.add('hidden'));
+        document
+          .querySelector('.cennik')
+          .querySelector(`.oferta-${clicked.dataset.tab}`)
+          .classList.remove('hidden');
       });
     </script>
   </body>

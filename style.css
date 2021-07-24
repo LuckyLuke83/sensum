@@ -119,14 +119,21 @@ h4 {
   color: var(--fontCol);
   text-align: center;
   line-height: 45px;
+  width: 100%;
+  height: 3rem;
+  text-decoration: none;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  outline: none; /*no border after selecting*/
+  letter-spacing: 1px;
+  display: block;
+  transition: all 0.3s;
+  border: none;
 }
 
-.style2_format {
-  background-color: var(--color-2);
-  color: var(--fontCol);
-  font-size: 0.8rem;
-  text-align: center;
-  line-height: 45px;
+.style1_format:hover {
+  background-color: var(--color-3);
+  color: var(--fontColHover);
 }
 
 .h_formating {
@@ -172,29 +179,13 @@ h4 {
   border: solid var(--color-2) 5px;
  }
 
-.btn_oferta {
-  width: 100%;
-  height: 3rem;
-  text-decoration: none;
-  /* font-size: 1.5rem; */
-  text-transform: uppercase;
-  
-  outline: none; /*no border after selecting*/
-  letter-spacing: 1px;
-  display: block;
-  transition: all 0.3s;
-  border: none;
-}
 
-.btn_oferta:hover {
+
+
+.btn_active {
   background-color: var(--color-3);
   color: var(--fontColHover);
 }
-
-/* .btn_oferta_active {
-  background-color: var(--color-3);
-  color: var(--fontColHover);
-} */
 
 .oferta_info {
   font-size: 0.9rem;
@@ -214,6 +205,11 @@ h4 {
   grid-template-rows: repeat(5, 45px); */
   background-color: var(--color-background);
   margin: 0.8rem;
+}
+
+.cena_uslugi {
+  text-align: center;
+  line-height: 2rem;
 }
 
 .kontakt {
