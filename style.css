@@ -9,7 +9,7 @@
   --fontCol: #BDF8FF;
   --fontColHover: #fff;
   --gradient: linear-gradient(to right, var(--color-background), var(--color-1));
-  --text-padding: 1rem;
+  --text-padding: 0.8rem;
 
 }
 
