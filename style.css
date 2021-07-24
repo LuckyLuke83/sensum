@@ -191,10 +191,10 @@ h4 {
   color: var(--fontColHover);
 }
 
-.btn_oferta_active {
+/* .btn_oferta_active {
   background-color: var(--color-3);
   color: var(--fontColHover);
-}
+} */
 
 .oferta_info {
   font-size: 0.9rem;

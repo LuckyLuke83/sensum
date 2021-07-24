@@ -104,11 +104,11 @@
     </section>
     <section class="section" id="oferta">
       <h3 class="h_formating">Oferta</h3>
-      <div class="info shadow">
-        <button class="btn_oferta btn_oferta_active style1_format">
+      <div class="info shadow oferta_container">
+        <button class="btn_oferta style1_format" data-tab="1">
           Konsultacje z psychologiem
         </button>
-        <div class="oferta_info">
+        <div class="oferta_info oferta-1">
           <p>
             Konsultacja z psychologiem to forma pomocy oferowana osobom
             przeżywającym tak zwane kryzysy życiowe lub trudności
@@ -119,8 +119,10 @@
             na następujące fazy:
           </p>
         </div>
-        <button class="btn_oferta style1_format">Terapia indywidualna</button>
-        <div class="hidden oferta_info">
+        <button class="btn_oferta style1_format" data-tab="2">
+          Terapia indywidualna
+        </button>
+        <div class="hidden oferta_info oferta-2">
           <p>
             Konsultacja z psychologiem to forma pomocy oferowana osobom
             przeżywającym tak zwane kryzysy życiowe lub trudności
@@ -131,8 +133,8 @@
             na następujące fazy:
           </p>
         </div>
-        <button class="btn_oferta style1_format">Diagnoza</button>
-        <div class="hidden oferta_info">
+        <button class="btn_oferta style1_format" data-tab="3">Diagnoza</button>
+        <div class="hidden oferta_info oferta-3">
           <p>
             Konsultacja z psychologiem to forma pomocy oferowana osobom
             przeżywającym tak zwane kryzysy życiowe lub trudności
@@ -143,8 +145,10 @@
             na następujące fazy:
           </p>
         </div>
-        <button class="btn_oferta style1_format">Terapia par</button>
-        <div class="hidden oferta_info">
+        <button class="btn_oferta style1_format" data-tab="4">
+          Terapia par
+        </button>
+        <div class="hidden oferta_info oferta-4">
           <p>
             Konsultacja z psychologiem to forma pomocy oferowana osobom
             przeżywającym tak zwane kryzysy życiowe lub trudności
@@ -155,8 +159,10 @@
             na następujące fazy:
           </p>
         </div>
-        <button class="btn_oferta style1_format">Terapia Online</button>
-        <div class="hidden oferta_info">
+        <button class="btn_oferta style1_format" data-tab="5">
+          Terapia Online
+        </button>
+        <div class="hidden oferta_info oferta-5">
           <p>
             Konsultacja z psychologiem to forma pomocy oferowana osobom
             przeżywającym tak zwane kryzysy życiowe lub trudności
@@ -167,8 +173,10 @@
             na następujące fazy:
           </p>
         </div>
-        <button class="btn_oferta style1_format">Dla rodziców</button>
-        <div class="hidden oferta_info">
+        <button class="btn_oferta style1_format" data-tab="6">
+          Dla rodziców
+        </button>
+        <div class="hidden oferta_info oferta-6">
           <p>
             Konsultacja z psychologiem to forma pomocy oferowana osobom
             przeżywającym tak zwane kryzysy życiowe lub trudności
@@ -179,8 +187,10 @@
             na następujące fazy:
           </p>
         </div>
-        <button class="btn_oferta style1_format">Dla dzieci i młodzieży</button>
-        <div class="hidden oferta_info">
+        <button class="btn_oferta style1_format" data-tab="7">
+          Dla dzieci i młodzieży
+        </button>
+        <div class="hidden oferta_info oferta-7">
           <p>
             Konsultacja z psychologiem to forma pomocy oferowana osobom
             przeżywającym tak zwane kryzysy życiowe lub trudności
@@ -196,38 +206,30 @@
     <section class="section" id="cennik">
       <h3 class="h_formating">Cennik</h3>
       <div class="shadow cennik">
-        <button class="btn_oferta btn_oferta_active style2_format">
+        <button class="btn_oferta style2_format">
           konsultacja psychologiczna dorosłych
         </button>
-        <div class="oferta_info">50 minut - 100zł</div>
+        <div class="">50 minut - 100zł</div>
         <button class="btn_oferta style2_format">
           psychoterapia indywidualna dorosłych
         </button>
-        <div class="oferta_info hidden">50 minut - 100zł</div>
+        <div class="hidden">50 minut - 100zł</div>
         <button class="btn_oferta style2_format">psychoterapia par</button>
-        <div class="oferta_info hidden">50 minut - 100zł</div>
+        <div class="hidden">50 minut - 100zł</div>
         <button class="btn_oferta style2_format">terapia online</button>
-        <div class="oferta_info hidden">50 minut - 100zł</div>
+        <div class="hidden">50 minut - 100zł</div>
         <button class="btn_oferta style2_format">
           diagnoza osobowości (z opinią)
         </button>
-        <div class="oferta_info hidden">50 minut - 100zł</div>
+        <div class="hidden">50 minut - 100zł</div>
         <button class="btn_oferta style2_format">
           diag. neuropsychologiczna (z opinią)
         </button>
-        <div class="oferta_info hidden">50 minut - 100zł</div>
+        <div class="hidden">50 minut - 100zł</div>
         <button class="btn_oferta style2_format">
           kons. psychologiczna dzieci i młodzieży
         </button>
-        <div class="oferta_info hidden">50 minut - 100zł</div>
-        <!-- <div class="style1_format">Rodzaj usługi</div><div class="style1_format">Czas</div><div class="style1_format">Cena</div>
-        <div class="style2_format">konsultacja psychologiczna dorosłych</div> <div class="style2_format">50 min</div><div class="style2_format">100 zł</div>
-        <div class="style2_format">psychoterapia indywidualna dorosłych</div> <div class="style2_format">50 min</div><div class="style2_format">100 zł</div>
-        <div class="style2_format">psychoterapia par</div> <div class="style2_format">50 min</div><div class="style2_format">100 zł</div>
-        <div class="style2_format">terapia online</div> <div class="style2_format">50 min</div><div class="style2_format">100 zł</div>
-        <div class="style2_format">diagnoza osobowości (łącznie z opinią)</div> <div class="style2_format">50 min</div><div class="style2_format">100 zł</div>
-        <div class="style2_format">diagnoza neuropsychologiczna (łącznie z opinią)</div> <div class="style2_format">50 min</div><div class="style2_format">100 zł</div>
-        <div class="style2_format">konsultacja psychologiczna dzieci i młodzieży</div> <div class="style2_format">50 min</div><div class="style2_format">100 zł</div> -->
+        <div class="hidden">50 minut - 100zł</div>
       </div>
     </section>
 
@@ -256,14 +258,35 @@
       </div>
     </section>
     <script>
-      function navHamburger() {
-        var x = document.getElementById('topNav');
-        if (x.className === 'navigation') {
-          x.className += ' responsive';
-        } else {
-          x.className = 'navigation';
-        }
-      }
+      const ofertaContainer = document.querySelector('.oferta_container');
+      const oferta_btn = document.querySelectorAll('.btn_oferta');
+      const oferta_info = document.querySelectorAll('.oferta_info');
+      console.log(oferta_btn);
+
+      ofertaContainer.addEventListener('click', function (e) {
+        e.preventDefault();
+        const clicked = e.target.closest('.btn_oferta');
+        console.log(clicked);
+
+        //Guard clause
+        if (!clicked) return;
+        //Activate content area
+        oferta_info.forEach(el => el.classList.add('hidden'));
+        document
+          .querySelector(`.oferta-${clicked.dataset.tab}`)
+          .classList.remove('hidden');
+
+        // //Activetab
+        // tabs.forEach(el => el.classList.remove('operations__tab--active'));
+        // e.target.classList.add('operations__tab--active');
+        // //Activate content area
+        // tabsContent.forEach(el =>
+        //   el.classList.remove('operations__content--active')
+        // );
+        // document
+        //   .querySelector(`.operations__content--${clicked.dataset.tab}`)
+        //   .classList.add('operations__content--active');
+      });
     </script>
   </body>
 </html>
