@@ -125,7 +125,7 @@ h4 {
   font-size: 0.8rem;
   text-transform: uppercase;
   outline: none; /*no border after selecting*/
-  letter-spacing: 1px;
+  /* letter-spacing: 0px; */
   display: block;
   transition: all 0.3s;
   border: none;
