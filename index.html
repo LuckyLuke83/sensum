@@ -35,12 +35,20 @@
           <li class="nav__item">
             <a class="nav__link--btn" href="#kontakt">Kontakt</a>
           </li>
+          <li class="nav__item">
+            <a class="nav__link--btn" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+          </li>
         </ul>
       </nav>
       <div class="o_nas_1">
         <div class="gradient_full">
           <h1 class="h_formating">SENSUM</h1>
-          <h4 class="h_formating">GABINET PSYCHOLOGICZNY 600-387-855</h4>
+          <h4 class="h_formating">
+            GABINET PSYCHOLOGICZNY <br />
+            600-387-855
+          </h4>
         </div>
       </div>
 
@@ -261,6 +269,18 @@
         ></iframe>
       </div>
     </section>
+    <div class="modal hidden">
+      <a class="nav__link--btn" href="#section--1">O nas</a>
+
+      <a class="nav__link--btn" href="#specjalisci">Specjaliści</a>
+
+      <a class="nav__link--btn" href="#oferta">Oferta</a>
+
+      <a class="nav__link--btn" href="#cennik">Cennik</a>
+
+      <a class="nav__link--btn" href="#kontakt">Kontakt</a>
+    </div>
+    <div class="overlay hidden"></div>
     <script>
       const ofertaContainer = document.querySelector('.oferta_container');
       const cennik = document.querySelector('.cennik');
@@ -268,8 +288,28 @@
       const cennik_btn = document.querySelectorAll('.cennik_oferta');
       const oferta_info = document.querySelectorAll('.oferta_info');
       const cena_uslugi = document.querySelectorAll('.cena_uslugi');
+      const overlay = document.querySelector('.overlay');
+      const modal = document.querySelector('.modal');
 
-      console.log(cena_uslugi);
+      const closeModal = function () {
+        modal.classList.add('hidden');
+        overlay.classList.add('hidden');
+      };
+
+      document
+        .querySelector('.fa-bars')
+        .addEventListener('click', function (e) {
+          e.preventDefault();
+          modal.classList.remove('hidden');
+          overlay.classList.remove('hidden');
+        });
+
+      //Hiding overlay when clicking ESC
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          closeModal();
+        }
+      });
 
       ofertaContainer.addEventListener('click', function (e) {
         e.preventDefault();
