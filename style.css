@@ -73,16 +73,15 @@ h4 {
 }
 
 .nav {
-  /* position: relative;
-  left: -5%; */
+  position: relative;
+  left: -5%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   height: 4rem;
-  width: 100%;
+  width: 110%;
   background-color: var(--color-2);
-  /* opacity: 0.8; */
-  /* padding: 0 6rem; */
+
   z-index: 100;
   transition: transform 1s, opacity 1s;
 }
@@ -225,13 +224,16 @@ h4 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* display: flex;
-  flex-direction: column; */
+
   z-index: 1000;
   transition: all 0.5s;
   /* background-color: var(--color-2); */
   border-radius: 5px;
   opacity: 0.7;
+}
+
+.modal .nav__link--btn {
+  color: var(--fontColHover);
 }
 
 .overlay {
