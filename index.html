@@ -17,39 +17,39 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <header class="section">
-      <nav class="nav">
-        <ul class="nav__links">
-          <li class="nav__item">
-            <a class="nav__link--btn" href="#section--1">O nas</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link--btn" href="#specjalisci">Specjaliści</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link--btn" href="#oferta">Oferta</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link--btn" href="#cennik">Cennik</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link--btn" href="#kontakt">Kontakt</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link--btn" href="javascript:void(0);">
-              <i class="fa fa-bars"></i>
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <div class="o_nas_1">
-        <div class="gradient_full">
-          <h1 class="h_formating">SENSUM</h1>
-          <h4 class="h_formating">
-            GABINET PSYCHOLOGICZNY <br />
-            600-387-855
-          </h4>
-        </div>
+    <nav class="nav">
+      <ul class="nav__links">
+        <li class="nav__item">
+          <a class="nav__link--btn" href="#onas">O nas</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link--btn" href="#specjalisci">Specjaliści</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link--btn" href="#oferta">Oferta</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link--btn" href="#cennik">Cennik</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link--btn" href="#kontakt">Kontakt</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link--btn" href="javascript:void(0);">
+            <i class="fa fa-bars"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <header class="section header">
+      <div class="o_nas_1" id="onas">
+        <!-- <div class="gradient_full"> -->
+        <h1 class="h_formating">SENSUM</h1>
+        <h4 class="h_formating">
+          GABINET PSYCHOLOGICZNY <br />
+          600-387-855
+        </h4>
+        <!-- </div> -->
       </div>
 
       <img class="logo" src="img/sensum-logo.png" alt="Sensum_logo" />
@@ -76,9 +76,9 @@
       </div>
     </header>
     <section class="section" id="specjalisci">
-      <div class="gradient_full">
-        <h3 class="h_formating">Nasi specjaliści</h3>
-      </div>
+      <!-- <div class="gradient_full"> -->
+      <h3 class="h_formating">Nasi specjaliści</h3>
+      <!-- </div> -->
       <div class="info shadow">
         <img
           class="rounded_photo shadow"
@@ -270,7 +270,7 @@
       </div>
     </section>
     <div class="modal hidden">
-      <a class="nav__link--btn" href="#section--1">O nas</a>
+      <a class="nav__link--btn" href="#onas">O nas</a>
 
       <a class="nav__link--btn" href="#specjalisci">Specjaliści</a>
 
@@ -290,6 +290,7 @@
       const cena_uslugi = document.querySelectorAll('.cena_uslugi');
       const overlay = document.querySelector('.overlay');
       const modal = document.querySelector('.modal');
+      const modal_btns = document.querySelectorAll('.nav__link--btn');
 
       const closeModal = function () {
         modal.classList.add('hidden');
@@ -308,6 +309,26 @@
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') {
           closeModal();
+        }
+      });
+
+      // Closing modal menu
+      modal.addEventListener('click', function (e) {
+        e.preventDefault();
+        // const clicked = e.target.closest('.nav__link--btn');
+        if (e.target.classList.contains('nav__link--btn')) {
+          const id = e.target.getAttribute('href');
+          document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+        }
+        closeModal();
+      });
+
+      //Smooth nav buttons scrolling
+      modal.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (e.target.classList.contains('nav__link--btn')) {
+          const id = e.target.getAttribute('href');
+          document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
         }
       });
 
@@ -344,6 +365,25 @@
           .querySelector(`.oferta-${clicked.dataset.tab}`)
           .classList.remove('hidden');
       });
+
+      const header = document.querySelector('.header');
+      const nav = document.querySelector('.nav');
+      const navHeight = nav.getBoundingClientRect().height;
+
+      const stickyNav = function (entries) {
+        const [entry] = entries; //to samo co napisać entries[0]
+        !entry.isIntersecting
+          ? nav.classList.add('sticky')
+          : nav.classList.remove('sticky');
+      };
+
+      const headerObserver = new IntersectionObserver(stickyNav, {
+        root: null,
+        threshold: 0.1,
+        // rootMargin: `-${navHeight}px`, //dystans od góry
+      });
+
+      headerObserver.observe(header);
     </script>
   </body>
 </html>
