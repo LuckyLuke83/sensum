@@ -14,7 +14,8 @@
     var(--color-background),
     var(--color-1)
   );
-  --text-padding: 0.8rem;
+  --nav-height: 6rem;
+  --text-padding: 1.2rem;
 }
 
 /* --main-1: #875C3B;
@@ -30,7 +31,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 
 html {
@@ -38,13 +39,12 @@ html {
    * default document font size = 16px, 1rem = 16px, 100% = 16px
    * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
   */
-
+  font-size: 62.5%;
   box-sizing: border-box;
 }
 
 /* Base reset */
 body {
-  padding: 0 0.5rem;
   font-family: 'Poppins', sans-serif;
   font-size: 16px; /* 18px */
   font-weight: 400;
@@ -53,37 +53,44 @@ body {
 }
 
 h1 {
-  font-size: 4rem;
-  padding-left: 0.5rem;
+  font-size: 6rem;
+  padding-left: 2rem;
 }
 
 h3 {
-  font-size: 2.5rem;
-  padding-left: 0.5rem;
+  font-size: 4rem;
+  padding-left: 2rem;
 }
 
 h4 {
-  font-size: 1.5rem;
-  padding-left: 0.5rem;
+  font-size: 2rem;
+  padding-left: 2rem;
 }
 
 .section {
-  padding: 2rem 0;
+  font-size: 2rem;
+  margin: 0 0.5rem;
+  padding-top: var(--nav-height);
+  padding-bottom: 1rem;
   background-color: var(--color-1);
 }
 
 .nav {
   position: relative;
-  left: -5%;
+  font-size: 2.5rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  height: 4rem;
-  width: 110%;
+  height: var(--nav-height);
   background-color: var(--color-2);
-
   z-index: 100;
   transition: transform 1s, opacity 1s;
+}
+
+.sticky {
+  position: fixed;
+  width: 100%;
+  opacity: 0.7;
 }
 
 .nav__links {
@@ -99,14 +106,10 @@ h4 {
 
 .nav__link--btn:link,
 .nav__link--btn:visited {
-  height: 3rem;
   text-decoration: none;
-  line-height: 3rem;
-  font-size: 1.5rem;
   margin: 0 0.5rem;
   padding: 0 1.5rem;
   border-radius: 1rem;
-  /* background-color: var(--color-2); */
   color: var(--fontCol);
   display: block;
   transition: all 0.3s;
@@ -120,15 +123,13 @@ h4 {
 .style1_format {
   background-color: var(--color-2);
   color: var(--fontCol);
+  line-height: 4rem;
   text-align: center;
-  line-height: 45px;
   width: 100%;
-  height: 3rem;
+  font-size: 2rem;
   text-decoration: none;
-  font-size: 0.8rem;
   text-transform: uppercase;
   outline: none; /*no border after selecting*/
-  /* letter-spacing: 0px; */
   display: block;
   transition: all 0.3s;
   border: none;
@@ -141,8 +142,13 @@ h4 {
 
 .h_formating {
   color: var(--color-2);
-  /* transform: translateY(4rem); */
+
   background-image: var(--gradient);
+}
+
+ul {
+  margin-left: 4rem;
+  line-height: 1.8;
 }
 
 .shadow {
@@ -150,8 +156,6 @@ h4 {
 }
 
 .gradient_full {
-  /* width: 100%; */
-  /* transform: translateY(2rem); */
   background-image: linear-gradient(to right, var(--background), var(--main-5));
 }
 
@@ -189,9 +193,8 @@ h4 {
 }
 
 .oferta_info {
-  font-size: 0.9rem;
   padding: 1rem;
-  display: flex;
+
   background-color: var(--color-background);
 }
 
@@ -200,22 +203,20 @@ h4 {
 }
 
 .cennik {
-  /* display: grid;
-  justify-items: stretch;
-  grid-template-columns: 5fr 1fr 1fr;
-  grid-template-rows: repeat(5, 45px); */
   background-color: var(--color-background);
-  margin: 0.8rem;
 }
 
 .cena_uslugi {
+  line-height: 4rem;
   text-align: center;
-  line-height: 2rem;
+}
+
+.cennik_logo {
+  display: none;
 }
 
 .kontakt {
   padding: 2rem;
-  font-size: 0.9rem;
   line-height: 2;
 }
 
@@ -249,9 +250,107 @@ h4 {
   transition: all 0.5s;
 }
 
-.sticky {
-  position: fixed;
-  background-color: var(--color-2);
-  opacity: 0.7;
-  /* background-color: rgba(255, 255, 255, 0.95); */
+@media screen and (min-width: 768px) {
+  .flex {
+    display: flex;
+    margin: auto;
+  }
+
+  .section {
+    max-width: 1224px;
+    margin: auto;
+  }
+
+  .info {
+    margin: 3rem 3rem;
+    padding: 2.5rem;
+  }
+
+  .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      'gradient logo'
+      'info info';
+  }
+
+  .spec {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      'gradient .'
+      'ewelina joanna';
+  }
+
+  .contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      'gradient .'
+      'kontakt .'
+      'map map';
+  }
+
+  .cennik {
+    width: 75%;
+    border: 1px black solid;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .cennik .hidden {
+    display: block;
+  }
+  .cennik .btn_active {
+    background-color: var(--color-2);
+    color: var(--fontCol);
+  }
+
+  .cennik_logo {
+    display: block;
+  }
+
+  .kontakt {
+    grid-area: kontakt;
+  }
+
+  .map {
+    grid-area: map;
+  }
+  .h_formating {
+    grid-area: gradient;
+    align-self: start;
+    /* border: 1px red solid; */
+  }
+  .ewelina {
+    grid-area: ewelina;
+  }
+
+  .joanna {
+    grid-area: joanna;
+  }
+
+  .logo {
+    grid-area: logo;
+  }
+
+  .onas {
+    grid-area: info;
+  }
+
+  .nav__item:not(:last-child) {
+    display: block;
+  }
+
+  .btn_mobile {
+    display: none;
+  }
+
+  .hover_disabled {
+    pointer-events: none; /*no hover efect */
+  }
 }
