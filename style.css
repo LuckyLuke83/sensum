@@ -9,6 +9,8 @@
   --color-background: #fcfcfc;
   --fontCol: #bdf8ff;
   --fontColHover: #fff;
+  --fontSizeDesk: 2rem;
+  --fontSizeMobile: 1.6rem;
   --gradient: linear-gradient(
     to right,
     var(--color-background),
@@ -46,7 +48,7 @@ html {
 /* Base reset */
 body {
   font-family: 'Poppins', sans-serif;
-  font-size: 16px; /* 18px */
+  /* font-size: 16px; */
   font-weight: 400;
   line-height: 1.4;
   background-color: var(--color-background);
@@ -68,7 +70,7 @@ h4 {
 }
 
 .section {
-  font-size: 2rem;
+  font-size: var(--fontSizeMobile);
   margin: 0 0.5rem;
   padding-top: var(--nav-height);
   padding-bottom: 1rem;
@@ -126,7 +128,7 @@ h4 {
   line-height: 4rem;
   text-align: center;
   width: 100%;
-  font-size: 2rem;
+  font-size: 1rem;
   text-decoration: none;
   text-transform: uppercase;
   outline: none; /*no border after selecting*/
@@ -225,16 +227,18 @@ ul {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
+  font-size: 3rem;
   z-index: 1000;
   transition: all 0.5s;
   /* background-color: var(--color-2); */
   border-radius: 5px;
-  opacity: 0.7;
+
+  opacity: 0.8;
 }
 
 .modal .nav__link--btn {
   color: var(--fontColHover);
+  text-align: center;
 }
 
 .overlay {
@@ -257,6 +261,7 @@ ul {
   }
 
   .section {
+    font-size: 2rem;
     max-width: 1224px;
     margin: auto;
   }
@@ -264,6 +269,10 @@ ul {
   .info {
     margin: 3rem 3rem;
     padding: 2.5rem;
+  }
+
+  .style1_format {
+    font-size: var(--fontSizeMobile);
   }
 
   .header {
@@ -296,7 +305,7 @@ ul {
 
   .cennik {
     width: 75%;
-    border: 1px black solid;
+
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: auto;
