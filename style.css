@@ -128,7 +128,7 @@ h4 {
   line-height: 4rem;
   text-align: center;
   width: 100%;
-  font-size: 1rem;
+  font-size: var(--fontSizeMobile);
   text-decoration: none;
   text-transform: uppercase;
   outline: none; /*no border after selecting*/
